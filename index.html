@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- logo -->
+    <link rel="icon" href="./img/profile.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elysian
+    </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000000;
+        }
+
+        h1 {
+            font-family: 'Tahoma';
+        }
+
+
+        .nav_container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main_container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            /* border: solid 1px rgb(68, 0, 255); */
+
+
+        }
+
+        .side_nav {
+            background-color: #000000;
+            color: white;
+            width: 200px;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            /* border: solid 1px red; */
+        }
+
+        .side_nav ul {
+            margin-top: 50px;
+
+        }
+
+        .side_nav ul button {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+
+        }
+
+        .side_nav ul button:hover {
+            background-color: #eeb8bf;
+            color: #ffffff;
+        }
+
+        .book_container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            background-color: #000000;
+            transition: transform 0.5s ease;
+
+
+        }
+
+        .book_container img {
+            height: 350px;
+            width: 250px;
+        }
+
+        .book_1 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .book_2 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_4 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_5 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_6 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_7 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_8 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_9 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_10 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_2_1 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_2_2 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_2_3 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3_1 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3_2 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3_3 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3_4 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3_5 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3_6 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+        .book_3_7 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .book_3_8 img:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+
+        }
+
+
+
+        .video_1,
+        .video_2,
+        .video_3,
+        .video_4,
+        .video_5,
+        .video_6,
+        .video_7,
+        .video_8,
+        .video_9,
+        .video_2_1,
+        .video_2_2,
+        .video_2_3,
+        .video_3_1,
+        .video_3_2,
+        .video_3_3,
+        .video_3_4,
+        .video_3_5,
+        .video_3_6,
+        .video_3_7,
+        .video_3_8 {
+            visibility: hidden;
+            position: absolute;
+            display: flex;
+            width: 100%;
+
+
+        }
+
+        .book_details_container {
+            display: flex;
+            /* justify-content: center; */
+            position: absolute;
+            height: 580px;
+            width: 1685px;
+            background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(41, 40, 40, 0.466));
+
+        }
+
+
+        .book_details {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            margin: 20px;
+            /* width: 20%; */
+            height: 100%;
+            z-index: 999;
+            justify-content: center;
+
+        }
+
+        .video_container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            height: 580px;
+            width: 1685px;
+
+
+            /* border: solid 1px red; */
+            background-color: #000000;
+
+        }
+
+
+        .thumbnail {
+            visibility: visible;
+            width: 100%;
+
+        }
+
+
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            width: 1685px;
+            margin: auto;
+            position: relative;
+        }
+
+        .book_container {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .book_container div {
+            min-width: 200px;
+            /* Adjust as needed */
+            height: 300px;
+            /* Adjust as needed */
+            flex-shrink: 0;
+        }
+
+        button.prev,
+        button.next {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            /* border: none; */
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        button.prev {
+            left: 0;
+        }
+
+        button.next {
+            right: 0;
+        }
+
+
+        .sub_container {
+            height: 450px;
+            /* border: 1px solid red; */
+            overflow: scroll;
+            overflow-x: hidden;
+
+        }
+    </style>
+    <div class="main_container">
+        <div class="nav_container">
+
+            <div class="side_nav">
+                <ul>
+                    <!-- profile image circle -->
+                    <button type="button" class="btn">
+
+                        <img src="./img/profile.jpg" alt="" srcset=""
+                            style="width: 100px; height: 100px; border-radius: 50%;">
+                    </button>
+
+                    <button type="button" class="btn" onclick="window.location.href='index.html'">
+                        <i class="fa fa-house"></i> Home
+                    </button>
+                    <button type="button" class="btn" onclick="window.location.href='books.html'">
+                        <i class="fa fa-book"></i> Books
+                    </button>
+                    <button type="button" class="btn ">
+                        <i class="fa-solid fa-headphones"></i> Audio Book
+                    </button>
+                    <button type="button" class="btn ">
+                        <i class="fa-solid fa-circle-info"></i> About Us
+                    </button>
+                    <button type="button" class="btn ">
+                        <i class="fa-solid fa-phone-volume"></i> Contact
+                    </button>
+
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="cup">
+            <div class="video_container">
+
+                <div class="thumbnail">
+                    <!-- make this autoplay, loop, and muted -->
+                    <video width="100%" height="550" autoplay loop muted>
+                        <source src="./video/elysian.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                </div>
+
+                <div class="video_1">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1>Harry Potter and the Philosopher's Stone</h1>
+                            <p>Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.
+                                K. Rowling.
+                                The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry
+                                Potter, a
+                                young wizard who discovers his magical heritage on his eleventh birthday, when he
+                                receives a letter
+                                of acceptance to Hogwarts School of Witchcraft and Wizardry.</p>
+                        </div>
+                    </div>
+                    <iframe id="audioFrame_1" width="100%" height="550"
+                        src="https://www.youtube.com/embed/HDU9WoUgr30?autoplay=1&mute=1"
+                        title="Harry Potter and the Philosopher&#39;s Stone - Full Audiobook" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="video_2">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1>None of This Rocks</h1>
+                            <p>None of This Rocks is a book by Joe Trohman, the lead guitarist of Fall Out Boy.
+                        </div>
+                    </div>
+                    <iframe id="audioFrame_2" width="100%" height="550"
+                        src="https://www.youtube.com/embed/dDhFQFBly1g?autoplay=1&mute=1"
+                        title="Joe Trohman&#39;s Book Signing &amp; Interview | None of This Rocks" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="video_3">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1>One Piece Sanji Recipe Book</h1>
+                            <p>One Piece Sanji Recipe Book is a book by Eiichiro Oda, the creator of One Piece.
+
+                        </div>
+                    </div>
+
+                    <iframe id='audioFrame_3' width="100%" height="550"
+                        src="https://www.youtube.com/embed/8q7AY9XTBBk?autoplay=1&mute=1"
+                        title="One Piece Sanji Recipe Book" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="video_4">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1>Marie Antoinette</h1>
+                            <p>Marie Antoinette is a biography of the French queen Marie Antoinette by British historian
+                                Lady Antonia Fraser. The book was published in 2001. The book is the basis for the 2006
+                                Sofia Coppola film Marie Antoinette.</p>
+                        </div>
+                    </div>
+
+                    <iframe id='audioFrame_4' width="100%" height="550"
+                        src="https://www.youtube.com/embed/BYTMD8NSwFA?autoplay=1&mute=1"
+                        title="&quot;Marie Antoinette: The Journey&quot; By Antonia Fraser" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_5">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1>John Wayne Gacy</h1>
+                            <p>John Wayne Gacy was an American serial killer
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_5' width="100%" height="550"
+                        src="https://www.youtube.com/embed/w2xvJv93sqQ?autoplay=1&mute=1"
+                        title="Brad Hunter - Inside the Mind of John Wayne Gacy - The Killer Clown" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+                <div class="video_6">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> the nightmare before christmas</h1>
+                            <p> the nightmare before christmas is a book by Tim Burton, the creator of the nightmare
+                                before christmas.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_6' width="100%" height="550"
+                        src="https://www.youtube.com/embed/qBNELyZgGMw?autoplay=1&mute=1"
+                        title="The Nightmare Before Christmas by Tim Burton - AUDIOBOOK" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+                <div class="video_7">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> the lion , the witch and the wardrobe </h1>
+                            <p> the lion , the witch and the wardrobe is a book by C.S Lewis, the creator of the lion ,
+                                the witch and the wardrobe.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_7' width="100%" height="550"
+                        src="https://www.youtube.com/embed/XinzGkt5UC8?autoplay=1&mute=1"
+                        title="The Lion, the Witch and the Wardrobe - Full Audiobook" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
+                </div>
+                <div class="video_8">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> Never Ending Story </h1>
+                            <p> Never Ending Story is a book by Michael Ende, the creator of Never Ending Story.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_8' width="100%" height="500"
+                        src="https://www.youtube.com/embed/uixLc0WFlj8?autoplay=1&mute=1"
+                        title="The Neverending Story | Prologue" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+
+                <!-- PPABORITO KO -->
+                <div class="video_2_1">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1>Harry Potter and the Philosopher's Stone</h1>
+                            <p>Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.
+                                K. Rowling.
+                                The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry
+                                Potter, a
+                                young wizard who discovers his magical heritage on his eleventh birthday, when he
+                                receives a letter
+                                of acceptance to Hogwarts School of Witchcraft and Wizardry.</p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_9' width="100%" height="550"
+                        src="https://www.youtube.com/embed/HDU9WoUgr30?autoplay=1&mute=1"
+                        title="Harry Potter and the Philosopher&#39;s Stone - Full Audiobook" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+
+                <div class="video_2_2">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> Coraline </h1>
+                            <p> Coraline is a book by Neil Gaiman, the creator of Coraline.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_10' width="100%" height="550"
+                        src="https://www.youtube.com/embed/j00LOvsO8OU?autoplay=1&mute=1"
+                        title="[FULL AUDIOBOOK] Coraline by Neil Gaiman" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="video_2_3">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> Treasure Planet </h1>
+                            <p> Treasure Planet is a book by Robert Louis Stevenson, the creator of Treasure Planet.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_11' width="100%" height="550"
+                        src="https://www.youtube.com/embed/9k0lANTkEcc?autoplay=1&mute=1"
+                        title="Quoting all Opening Narration lines in Treasure Planet (2002)" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <!-- NEWWWW -->
+
+                <div class="video_3_1">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> Never Ending Story </h1>
+                            <p> Never Ending Story is a book by Michael Ende, the creator of Never Ending Story.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_12' width="100%" height="550"
+                        src="https://www.youtube.com/embed/uixLc0WFlj8?autoplay=1&mute=1"
+                        title="The Neverending Story | Prologue" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_3_2">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> Never Ending Story </h1>
+                            <p> Never Ending Story is a book by Michael Ende, the creator of Never Ending Story.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_13' width="100%" height="550"
+                        src="https://www.youtube.com/embed/nozlx1kNeqc?autoplay=1&mute=1"
+                        title="TIM BURTON interview for BIG EYES" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_3_3">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> Ghost Busters </h1>
+                            <p> Ghost Busters is a book by Dan Aykroyd, the creator of Ghost Busters.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_14' width="100%" height="550"
+                        src="https://www.youtube.com/embed/M6OFLSHXnCg?list=PL9NX9KVRUrr_ikolR9XqutZh1rYlvxaXC?autoplay=1&mute=1"
+                        title="The Real GhostBusters GhostBuster Of The Year Audiobook" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_3_4">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> Joseph the Dreamer </h1>
+                            <p> Joseph the Dreamer is a book by the Bible, the creator of Joseph the Dreamer.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_15' width="100%" height="550"
+                        src="https://www.youtube.com/embed/Lqrt48Gk6Ss?autoplay=1&mute=1" title="Story Of Joseph NKJV"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_3_5">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> The Triumphs of a Taxidermist</h1>
+                            <p> The Triumphs of a Taxidermist is a book by H.G Wells
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_16' width="100%" height="550"
+                        src="https://www.youtube.com/embed/_zsf2m8IR-0?autoplay=1&mute=1"
+                        title="Triumphs of a Taxidermist ♦ By H. G. Wells ♦ Science Fiction ♦ Full Audiobook"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_3_6">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> The Dirt</h1>
+                            <p> Montley Crue The Dirt is a book by Montley Crue
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_17' width="100%" height="550"
+                        src="https://www.youtube.com/embed/KvMCQ37gnH4?autoplay=1&mute=1"
+                        title="Motley Crue ~ The Dirt ~ Audiobook" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_3_7">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> The Hunchback of Notre Dame </h1>
+                            <p> The Hunchback of Notre Dame is a book by Victor Hugo, the creator of The Hunchback of
+                                Notre Dame.
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_18' width="100%" height="550"
+                        src="https://www.youtube.com/embed/Y65zeCak1Bw?autoplay=1&mute=1"
+                        title="The Hunchback of Notre Dame by Victor Hugo" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video_3_8">
+                    <div class="book_details_container">
+                        <div class="book_details">
+                            <h1> The Myth of Sisyphus</h1>
+                            <p> The Myth of Sisyphus is a book by Albert Camus
+                            </p>
+                        </div>
+                    </div>
+                    <iframe id='audioFrame_19' width="100%" height="550"
+                        src="https://www.youtube.com/embed/MJzQfZ-cnn8?autoplay=1&mute=1"
+                        title="The Myth of Sisyphus - Videobook 🎧 Audiobook with Scrolling Text 📖" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="sub_container">
+                <h1 style="color: #fff">Continue Reading</h1>
+                <div class="carousel" id="carousel1">
+                    <button class="prev" onclick="moveCarousel('carousel1', -1)">&#10094;</button>
+                    <div class="book_container">
+                        <a href="./page/harry.html" class="" target="_blank">
+                            <div class="book_1">
+                                <img src="./img/harry_potter.jpg" alt="" srcset="">
+                            </div>
+                        </a>
+
+                        <a href="./page/none-of-this-rocks.html" class="" target="_blank">
+                            <div class="book_2">
+                                <img src="./img/NONE_OF_THIS_ROCKS.jpg" alt="" srcset="">
+                            </div>
+                        </a>
+
+
+                        <a href="./page/sanji.html" class="" target="_blank">
+                            <div class="book_3">
+                                <img src="./img/sanjicookbook.jpg" alt="" srcset="">
+                            </div>
+                        </a>
+
+                        <a href="./page/marie.html" class="" target="_blank">
+                            <div class="book_4">
+                                <img src="./img/mariemarie.jpg" alt="" srcset="">
+                            </div>
+                        </a>
+
+                        <div class="book_5">
+                            <img src="./img/killerclown.jpg" alt="" srcset="">
+                        </div>
+
+                        <div class="book_6">
+                            <img src="./img/nightmare.jpg" alt="" srcset="">
+                        </div>
+
+                        <div class="book_7">
+                            <img src="./img/lion.jpg" alt="" srcset="">
+                        </div>
+
+                        <div class="book_8">
+                            <img src="./img/neverending.jpg" alt="" srcset="">
+                        </div>
+                    </div>
+
+                    <button class="next" onclick="moveCarousel('carousel1', 1)">&#10095;</button>
+                </div>
+
+                <!-- PPABORITO KO -->
+                <h1 style="color: #fff">Favorites</h1>
+                <div class="carousel" id="carousel2">
+                    <button class="prev" onclick="moveCarousel('carousel2',-1)">&#10094;</button>
+                    <div class="book_container">
+                        <div class="book_2_1">
+                            <img src="./img/harry_potter.jpg" alt="">
+                        </div>
+                        <div class="book_2_2">
+                            <img src="./img/coraline.jpg" alt="">
+                        </div>
+                        <div class="book_2_3">
+                            <img src="./img/treasure.jpg" alt="">
+                        </div>
+                    </div>
+
+
+                    <button class="next" onclick="moveCarousel('carousel2',1)">&#10095;</button> <!-- Right arrow -->
+                </div>
+
+                <!-- NEWWWW -->
+                <h1 style="color: #fff">New Release</h1>
+                <div class="carousel" id="carousel3">
+                    <button class="prev" onclick="moveCarousel('carousel3',-1)">&#10094;</button>
+                    <div class="book_container">
+                        <div class="book_3_1">
+                            <img src="./img/neverending.jpg" alt="" srcset="">
+                        </div>
+                        <div class="book_3_2">
+                            <img src="./img/bigeyes.jpg" alt="" srcset="">
+                        </div>
+                        <div class="book_3_3">
+                            <img src="./img/ghost.jpg" alt="" srcset="">
+                        </div>
+                        <div class="book_3_4">
+                            <img src="./img/dreamer.jpg" alt="" srcset="">
+                        </div>
+                        <div class="book_3_5">
+                            <img src="./img/taxidermist.jpg" alt="" srcset="">
+                        </div>
+                        <div class="book_3_6">
+                            <img src="./img/crue.jpg" alt="" srcset="">
+                        </div>
+                        <div class="book_3_7">
+                            <img src="./img/hugo.jpg" alt="" srcset="">
+                        </div>
+                        <div class="book_3_8">
+                            <img src="./img/albert.jpg" alt="" srcset="">
+                        </div>
+
+                    </div>
+
+                    <button class="next" onclick="moveCarousel('carousel3',1)">&#10095;</button>
+
+
+                </div>
+</body>
+<script>
+    const thumbnail = document.querySelector('.thumbnail');
+
+
+    const book_1 = document.querySelector('.book_1');
+    const video_1 = document.querySelector('.video_1');
+    const book_2 = document.querySelector('.book_2');
+    const video_2 = document.querySelector('.video_2');
+    const book_3 = document.querySelector('.book_3');
+    const video_3 = document.querySelector('.video_3');
+    const book_4 = document.querySelector('.book_4');
+    const video_4 = document.querySelector('.video_4');
+    const book_5 = document.querySelector('.book_5');
+    const video_5 = document.querySelector('.video_5');
+    const book_6 = document.querySelector('.book_6');
+    const video_6 = document.querySelector('.video_6');
+    const book_7 = document.querySelector('.book_7');
+    const video_7 = document.querySelector('.video_7');
+    const book_8 = document.querySelector('.book_8');
+    const video_8 = document.querySelector('.video_8');
+
+
+    // PABORITO KO
+    const book_2_1 = document.querySelector('.book_2_1');
+    const video_2_1 = document.querySelector('.video_2_1');
+    const book_2_2 = document.querySelector('.book_2_2');
+    const video_2_2 = document.querySelector('.video_2_2');
+    const book_2_3 = document.querySelector('.book_2_3');
+    const video_2_3 = document.querySelector('.video_2_3');
+
+
+
+    // NEEWWW
+    const book_3_1 = document.querySelector('.book_3_1');
+    const video_3_1 = document.querySelector('.video_3_1');
+    const book_3_2 = document.querySelector('.book_3_2');
+    const video_3_2 = document.querySelector('.video_3_2');
+    const book_3_3 = document.querySelector('.book_3_3');
+    const video_3_3 = document.querySelector('.video_3_3');
+    const book_3_4 = document.querySelector('.book_3_4');
+    const video_3_4 = document.querySelector('.video_3_4');
+    const book_3_5 = document.querySelector('.book_3_5');
+    const video_3_5 = document.querySelector('.video_3_5');
+    const book_3_6 = document.querySelector('.book_3_6');
+    const video_3_6 = document.querySelector('.video_3_6');
+    const book_3_7 = document.querySelector('.book_3_7');
+    const video_3_7 = document.querySelector('.video_3_7');
+    const book_3_8 = document.querySelector('.book_3_8');
+    const video_3_8 = document.querySelector('.video_3_8');
+
+
+
+
+    book_1.addEventListener('mouseover', () => {
+        video_1.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(1);
+
+    });
+    book_1.addEventListener('mouseout', () => {
+        video_1.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(1);
+
+    });
+    book_2.addEventListener('mouseover', () => {
+        video_2.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(2);
+
+    });
+    book_2.addEventListener('mouseout', () => {
+        video_2.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(2);
+
+    });
+    book_3.addEventListener('mouseover', () => {
+        video_3.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(3);
+
+
+    });
+    book_3.addEventListener('mouseout', () => {
+        video_3.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(3);
+    });
+    book_4.addEventListener('mouseover', () => {
+        video_4.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(4);
+    });
+    book_4.addEventListener('mouseout', () => {
+        video_4.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(4);
+    });
+    book_5.addEventListener('mouseover', () => {
+        video_5.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(5);
+    });
+    book_5.addEventListener('mouseout', () => {
+        video_5.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(5);
+    });
+    book_6.addEventListener('mouseover', () => {
+        video_6.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(6);
+    });
+    book_6.addEventListener('mouseout', () => {
+        video_6.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(6);
+    });
+    book_7.addEventListener('mouseover', () => {
+        video_7.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(7);
+    });
+    book_7.addEventListener('mouseout', () => {
+        video_7.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(7);
+    });
+    book_8.addEventListener('mouseover', () => {
+        video_8.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(8);
+    });
+    book_8.addEventListener('mouseout', () => {
+        video_8.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(8);
+    });
+
+
+
+    // PABORITO KO
+
+    book_2_1.addEventListener('mouseover', () => {
+        video_2_1.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(9);
+
+
+    });
+    book_2_1.addEventListener('mouseout', () => {
+        video_2_1.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(9);
+
+    });
+    book_2_2.addEventListener('mouseover', () => {
+        video_2_2.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(10);
+
+    });
+    book_2_2.addEventListener('mouseout', () => {
+        video_2_2.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(10);
+
+    });
+    book_2_3.addEventListener('mouseover', () => {
+        video_2_3.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(11);
+    });
+    book_2_3.addEventListener('mouseout', () => {
+        video_2_3.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(11);
+
+    });
+
+
+    // NEEWWW
+
+    book_3_1.addEventListener('mouseover', () => {
+        video_3_1.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(12);
+
+    });
+    book_3_1.addEventListener('mouseout', () => {
+        video_3_1.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(12);
+    });
+    book_3_2.addEventListener('mouseover', () => {
+        video_3_2.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(13);
+
+    });
+    book_3_2.addEventListener('mouseout', () => {
+        video_3_2.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(13);
+    });
+    book_3_3.addEventListener('mouseover', () => {
+        video_3_3.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(14);
+
+    });
+    book_3_3.addEventListener('mouseout', () => {
+        video_3_3.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(14);
+    });
+    book_3_4.addEventListener('mouseover', () => {
+        video_3_4.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(15);
+    });
+    book_3_4.addEventListener('mouseout', () => {
+        video_3_4.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(15);
+    });
+    book_3_5.addEventListener('mouseover', () => {
+        video_3_5.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(16);
+    });
+    book_3_5.addEventListener('mouseout', () => {
+        video_3_5.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(16);
+    });
+    book_3_6.addEventListener('mouseover', () => {
+        video_3_6.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(17);
+
+    });
+    book_3_6.addEventListener('mouseout', () => {
+        video_3_6.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(17);
+    });
+    book_3_7.addEventListener('mouseover', () => {
+        video_3_7.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(18);
+
+    });
+    book_3_7.addEventListener('mouseout', () => {
+        video_3_7.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(18);
+    });
+    book_3_8.addEventListener('mouseover', () => {
+        video_3_8.style.visibility = 'visible';
+        thumbnail.style.visibility = 'hidden';
+        unmuteVideo(19);
+    });
+    book_3_8.addEventListener('mouseout', () => {
+        video_3_8.style.visibility = 'hidden';
+        thumbnail.style.visibility = 'visible';
+        muteVideo(19);
+    });
+
+
+
+
+
+
+
+
+
+    const carouselState = {};
+
+    function moveCarousel(carouselId, direction) {
+        console.log(carouselId);
+        const carouselElement = document.querySelector(`#${carouselId}`);
+
+        const container = carouselElement.querySelector('.book_container');
+        const itemsPerView = 1;
+        const itemWidth = 220;
+        const totalItems = container.querySelectorAll('div').length;
+
+        if (!carouselState[carouselId]) carouselState[carouselId] = 0;
+
+        carouselState[carouselId] += direction;
+
+        if (carouselState[carouselId] > totalItems - itemsPerView) {
+            carouselState[carouselId] = 0;
+        } else if (carouselState[carouselId] < 0) {
+            carouselState[carouselId] = totalItems - itemsPerView;
+        }
+
+        container.style.transform = `translateX(-${carouselState[carouselId] * itemWidth}px)`;
+    }
+
+
+
+
+
+    function unmuteVideo(vid_id) {
+        var iframe = document.getElementById(`audioFrame_${vid_id}`);
+        var src = iframe.src;
+        iframe.src = src.replace("mute=1", "mute=0");
+    }
+
+    function muteVideo(vid_id) {
+        var iframe = document.getElementById(`audioFrame_${vid_id}`);
+        var src = iframe.src;
+        iframe.src = src.replace("mute=0", "mute=1");
+    }
+</script>
+
+</html>
