@@ -24,14 +24,9 @@
             background-color: #000000;
         }
 
+
         h1 {
             font-family: 'Tahoma';
-        }
-
-
-        .nav_container {
-            display: flex;
-            flex-direction: column;
         }
 
         .main_container {
@@ -42,6 +37,13 @@
 
 
         }
+
+
+        .nav_container {
+            display: flex;
+            flex-direction: column;
+        }
+
 
         .side_nav {
             background-color: #000000;
@@ -68,6 +70,7 @@
             background-color: #eeb8bf;
             color: #ffffff;
         }
+
 
         .book_container {
             display: flex;
@@ -256,8 +259,6 @@
             position: absolute;
             display: flex;
             width: 100%;
-
-
         }
 
         .book_details_container {
@@ -360,42 +361,258 @@
             overflow-x: hidden;
 
         }
+
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            margin-top: 20px;
+            background-color: #000000;
+            width: 100%;
+
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .hamburger .hamburger-icon {
+            display: inline-block;
+
+        }
+
+        .hamburger .close-icon {
+            display: none;
+            font-size: 30px;
+            color: white;
+        }
+
+        .hamburger.open .hamburger-icon {
+            display: none;
+        }
+
+        .hamburger.open .close-icon {
+            display: inline-block;
+        }
+
+        .mobile_nav {
+            display: none;
+            background-color: #000000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .mobile_nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile_nav ul button {
+            font-size: 18px;
+            padding: 10px;
+            color: white;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            text-align: left;
+        }
+
+        .mobile_nav ul button:hover {
+            background-color: #eeb8bf;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+
+            /* Main container setup */
+            .main_container {
+                flex-direction: column;
+                padding: 10px;
+                width: 100vw;
+                /* Use 100% of the viewport width */
+                box-sizing: border-box;
+                /* Ensure padding is included in the width */
+            }
+
+            .side_nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .video_container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                position: relative;
+                width: 100%;
+                height: 50vh;
+                background-color: #000000;
+                box-sizing: border-box;
+            }
+
+            .book_details_container {
+                display: flex;
+                /* justify-content: center; */
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(41, 40, 40, 0.466));
+
+            }
+
+            .book_details {
+                color: white;
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                margin-top: 50px;
+                margin: 20px;
+                height: 100%;
+                z-index: 999;
+                justify-content: center;
+
+            }
+
+            .sub_container {
+                margin-top: 20px;
+                height: 40vh;
+                overflow: scroll;
+                overflow-x: hidden;
+                box-sizing: border-box;
+            }
+
+            .thumbnail {
+                visibility: visible;
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                position: relative;
+            }
+
+            .thumbnail video {
+                width: 100%;
+                height: 75%;
+                object-fit: cover;
+                object-position: left center;
+                max-width: 100%;
+            }
+
+            .carousel {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                width: 100%;
+                position: relative;
+            }
+
+            .book_container {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                position: relative;
+                background-color: #000000;
+                transition: transform 0.5s ease;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .book_container div {
+                min-width: 0;
+                flex-shrink: 0;
+            }
+
+
+            .book_container img {
+                height: 250px;
+                width: 150px;
+            }
+
+        }
     </style>
     <div class="main_container">
         <div class="nav_container">
-
-            <div class="side_nav">
-                <ul>
-                    <!-- profile image circle -->
-                    <button type="button" class="btn">
-
-                        <img src="./img/profile.jpg" alt="" srcset=""
+            <div class="side_nav flex-column col-12 col-md-2 p-3">
+                <ul class="list-unstyled">
+                    <!-- Profile image circle -->
+                    <button type="button" class="btn mb-3">
+                        <img src="./img/profile.jpg" alt="Profile"
                             style="width: 100px; height: 100px; border-radius: 50%;">
                     </button>
 
-                    <button type="button" class="btn" onclick="window.location.href='index.html'">
-                        <i class="fa fa-house"></i> Home
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='index.html'">
+                        <i class="fa fa-house me-2"></i> Home
                     </button>
-                    <button type="button" class="btn" onclick="window.location.href='books.html'">
-                        <i class="fa fa-book"></i> Books
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='books.html'">
+                        <i class="fa fa-book me-2"></i> Books
                     </button>
-                    <button type="button" class="btn ">
-                        <i class="fa-solid fa-headphones"></i> Audio Book
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='audio-books.html'">
+                        <i class="fa-solid fa-headphones me-2"></i> Audio Book
                     </button>
-                    <button type="button" class="btn ">
-                        <i class="fa-solid fa-circle-info"></i> About Us
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='about-us.html'">
+                        <i class="fa-solid fa-circle-info me-2"></i> About Us
                     </button>
-                    <button type="button" class="btn ">
-                        <i class="fa-solid fa-phone-volume"></i> Contact
+                    <button type="button" class="btn d-flex align-items-center justify-content-center"
+                        onclick="window.location.href='contact.html'">
+                        <i class="fa-solid fa-phone-volume me-2"></i> Contact
                     </button>
-
-
                 </ul>
             </div>
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger" onclick="toggleNav()">
+                <span class="hamburger-icon">&#9776;</span>
+                <span class="close-icon">X</span>
+            </div>
+
+            <div class="mobile_nav">
+                <ul>
+                    <button type="button" class="btn mb-3">
+                        <img src="./img/profile.jpg" alt="Profile"
+                            style="width: 100px; height: 100px; border-radius: 50%;">
+                    </button>
+
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='index.html'">
+                        Home
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='books.html'">
+                        Books
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='audio-books.html'">
+                        Audio Book
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='about-us.html'">
+                        About Us
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center"
+                        onclick="window.location.href='contact.html'">
+                        Contact
+                    </button>
+                </ul>
+            </div>
+
         </div>
 
-
-        <div class="cup">
+        <div class="cup ">
             <div class="video_container">
 
                 <div class="thumbnail">
@@ -526,7 +743,7 @@
 
 
                 </div>
-                
+
                 <div class="video_8">
                     <div class="book_details_container">
                         <div class="book_details">
@@ -717,46 +934,54 @@
                 <div class="carousel" id="carousel1">
                     <button class="prev" onclick="moveCarousel('carousel1', -1)">&#10094;</button>
                     <div class="book_container">
-                        <a href="./page/harry.html" class="" target="_blank">
+                        <a href="./page/harry.html" target="_blank">
                             <div class="book_1">
-                                <img src="./img/harry_potter.jpg" alt="" srcset="">
+                                <img src="./img/harry_potter.jpg" alt="Harry Potter">
                             </div>
                         </a>
 
-                        <a href="./page/none-of-this-rocks.html" class="" target="_blank">
+                        <a href="./page/none-of-this-rocks.html" target="_blank">
                             <div class="book_2">
-                                <img src="./img/NONE_OF_THIS_ROCKS.jpg" alt="" srcset="">
+                                <img src="./img/NONE_OF_THIS_ROCKS.jpg" alt="None of This Rocks">
                             </div>
                         </a>
 
-
-                        <a href="./page/sanji.html" class="" target="_blank">
+                        <a href="./page/sanji.html" target="_blank">
                             <div class="book_3">
-                                <img src="./img/sanjicookbook.jpg" alt="" srcset="">
+                                <img src="./img/sanjicookbook.jpg" alt="Sanji Cookbook">
                             </div>
                         </a>
 
-                        <a href="./page/marie.html" class="" target="_blank">
+                        <a href="./page/marie.html" target="_blank">
                             <div class="book_4">
-                                <img src="./img/mariemarie.jpg" alt="" srcset="">
+                                <img src="./img/mariemarie.jpg" alt="Marie Marie">
                             </div>
                         </a>
 
-                        <div class="book_5">
-                            <img src="./img/killerclown.jpg" alt="" srcset="">
-                        </div>
+                        <!-- Making the other books clickable with the respective page names -->
+                        <a href="./page/killerclown.html" target="_blank">
+                            <div class="book_5">
+                                <img src="./img/killerclown.jpg" alt="Killer Clown">
+                            </div>
+                        </a>
 
-                        <div class="book_6">
-                            <img src="./img/nightmare.jpg" alt="" srcset="">
-                        </div>
+                        <a href="./page/nightmare.html" target="_blank">
+                            <div class="book_6">
+                                <img src="./img/nightmare.jpg" alt="Nightmare">
+                            </div>
+                        </a>
 
-                        <div class="book_7">
-                            <img src="./img/lion.jpg" alt="" srcset="">
-                        </div>
+                        <a href="./page/lion.html" target="_blank">
+                            <div class="book_7">
+                                <img src="./img/lion.jpg" alt="Lion">
+                            </div>
+                        </a>
 
-                        <div class="book_8">
-                            <img src="./img/neverending.jpg" alt="" srcset="">
-                        </div>
+                        <a href="./page/neverending.html" target="_blank">
+                            <div class="book_8">
+                                <img src="./img/neverending.jpg" alt="Neverending Story">
+                            </div>
+                        </a>
                     </div>
 
                     <button class="next" onclick="moveCarousel('carousel1', 1)">&#10095;</button>
@@ -765,59 +990,79 @@
                 <!-- PPABORITO KO -->
                 <h1 style="color: #fff">Favorites</h1>
                 <div class="carousel" id="carousel2">
-                    <button class="prev" onclick="moveCarousel('carousel2',-1)">&#10094;</button>
+                    <button class="prev" onclick="moveCarousel('carousel2', -1)">&#10094;</button>
                     <div class="book_container">
-                        <div class="book_2_1">
-                            <img src="./img/harry_potter.jpg" alt="">
-                        </div>
-                        <div class="book_2_2">
-                            <img src="./img/coraline.jpg" alt="">
-                        </div>
-                        <div class="book_2_3">
-                            <img src="./img/treasure.jpg" alt="">
-                        </div>
+                        <a href="./page/harry.html" target="_blank">
+                            <div class="book_2_1">
+                                <img src="./img/harry_potter.jpg" alt="Harry Potter">
+                            </div>
+                        </a>
+                        <a href="./page/coraline.html" target="_blank">
+                            <div class="book_2_2">
+                                <img src="./img/coraline.jpg" alt="Coraline">
+                            </div>
+                        </a>
+                        <a href="./page/treasure.html" target="_blank">
+                            <div class="book_2_3">
+                                <img src="./img/treasure.jpg" alt="Treasure Island">
+                            </div>
+                        </a>
                     </div>
 
-
-                    <button class="next" onclick="moveCarousel('carousel2',1)">&#10095;</button> <!-- Right arrow -->
+                    <button class="next" onclick="moveCarousel('carousel2', 1)">&#10095;</button>
                 </div>
 
                 <!-- NEWWWW -->
                 <h1 style="color: #fff">New Release</h1>
                 <div class="carousel" id="carousel3">
-                    <button class="prev" onclick="moveCarousel('carousel3',-1)">&#10094;</button>
+                    <button class="prev" onclick="moveCarousel('carousel3', -1)">&#10094;</button>
                     <div class="book_container">
-                        <div class="book_3_1">
-                            <img src="./img/neverending.jpg" alt="" srcset="">
-                        </div>
-                        <div class="book_3_2">
-                            <img src="./img/bigeyes.jpg" alt="" srcset="">
-                        </div>
-                        <div class="book_3_3">
-                            <img src="./img/ghost.jpg" alt="" srcset="">
-                        </div>
-                        <div class="book_3_4">
-                            <img src="./img/dreamer.jpg" alt="" srcset="">
-                        </div>
-                        <div class="book_3_5">
-                            <img src="./img/taxidermist.jpg" alt="" srcset="">
-                        </div>
-                        <div class="book_3_6">
-                            <img src="./img/crue.jpg" alt="" srcset="">
-                        </div>
-                        <div class="book_3_7">
-                            <img src="./img/hugo.jpg" alt="" srcset="">
-                        </div>
-                        <div class="book_3_8">
-                            <img src="./img/albert.jpg" alt="" srcset="">
-                        </div>
-
+                        <a href="./page/neverending.html" target="_blank">
+                            <div class="book_3_1">
+                                <img src="./img/neverending.jpg" alt="Neverending Story">
+                            </div>
+                        </a>
+                        <a href="./page/bigeyes.html" target="_blank">
+                            <div class="book_3_2">
+                                <img src="./img/bigeyes.jpg" alt="Big Eyes">
+                            </div>
+                        </a>
+                        <a href="./page/ghost.html" target="_blank">
+                            <div class="book_3_3">
+                                <img src="./img/ghost.jpg" alt="Ghost">
+                            </div>
+                        </a>
+                        <a href="./page/dreamer.html" target="_blank">
+                            <div class="book_3_4">
+                                <img src="./img/dreamer.jpg" alt="Dreamer">
+                            </div>
+                        </a>
+                        <a href="./page/taxidermist.html" target="_blank">
+                            <div class="book_3_5">
+                                <img src="./img/taxidermist.jpg" alt="Taxidermist">
+                            </div>
+                        </a>
+                        <a href="./page/crue.html" target="_blank">
+                            <div class="book_3_6">
+                                <img src="./img/crue.jpg" alt="Crue">
+                            </div>
+                        </a>
+                        <a href="./page/hugo.html" target="_blank">
+                            <div class="book_3_7">
+                                <img src="./img/hugo.jpg" alt="Hugo">
+                            </div>
+                        </a>
+                        <a href="./page/albert.html" target="_blank">
+                            <div class="book_3_8">
+                                <img src="./img/albert.jpg" alt="Albert">
+                            </div>
+                        </a>
                     </div>
 
-                    <button class="next" onclick="moveCarousel('carousel3',1)">&#10095;</button>
-
-
+                    <button class="next" onclick="moveCarousel('carousel3', 1)">&#10095;</button>
                 </div>
+            </div>
+
 </body>
 <script>
     const thumbnail = document.querySelector('.thumbnail');
@@ -1100,12 +1345,11 @@
     const carouselState = {};
 
     function moveCarousel(carouselId, direction) {
-        console.log(carouselId);
         const carouselElement = document.querySelector(`#${carouselId}`);
 
         const container = carouselElement.querySelector('.book_container');
         const itemsPerView = 1;
-        const itemWidth = 220;
+        const itemWidth = 120;
         const totalItems = container.querySelectorAll('div').length;
 
         if (!carouselState[carouselId]) carouselState[carouselId] = 0;
@@ -1136,6 +1380,17 @@
         var src = iframe.src;
         iframe.src = src.replace("mute=0", "mute=1");
     }
+    function toggleNav() {
+        var mobileNav = document.querySelector('.mobile_nav');
+        var sideNav = document.querySelector('.side_nav');
+        var hamburger = document.querySelector('.hamburger');
+
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+        hamburger.classList.toggle('open');
+
+    }
+
+
 </script>
 
 </html>
