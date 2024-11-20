@@ -24,14 +24,9 @@
             background-color: #000000;
         }
 
+
         h1 {
             font-family: 'Tahoma';
-        }
-
-
-        .nav_container {
-            display: flex;
-            flex-direction: column;
         }
 
         .main_container {
@@ -42,6 +37,13 @@
 
 
         }
+
+
+        .nav_container {
+            display: flex;
+            flex-direction: column;
+        }
+
 
         .side_nav {
             background-color: #000000;
@@ -68,6 +70,7 @@
             background-color: #eeb8bf;
             color: #ffffff;
         }
+
 
         .book_container {
             display: flex;
@@ -256,8 +259,6 @@
             position: absolute;
             display: flex;
             width: 100%;
-
-
         }
 
         .book_details_container {
@@ -360,42 +361,253 @@
             overflow-x: hidden;
 
         }
+
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            margin-top: 20px;
+            background-color: #000000;
+            width: 100%;
+
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .hamburger .hamburger-icon {
+            display: inline-block;
+
+        }
+
+        .hamburger .close-icon {
+            display: none;
+            font-size: 30px;
+            color: white;
+        }
+
+        .hamburger.open .hamburger-icon {
+            display: none;
+        }
+
+        .hamburger.open .close-icon {
+            display: inline-block;
+        }
+
+        .mobile_nav {
+            display: none;
+            background-color: #000000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .mobile_nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile_nav ul button {
+            font-size: 18px;
+            padding: 10px;
+            color: white;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            text-align: left;
+        }
+
+        .mobile_nav ul button:hover {
+            background-color: #eeb8bf;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+
+            /* Main container setup */
+            .main_container {
+                flex-direction: column;
+                padding: 10px;
+                width: 100vw;
+                /* Use 100% of the viewport width */
+                box-sizing: border-box;
+                /* Ensure padding is included in the width */
+            }
+
+            .side_nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .video_container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                position: relative;
+                width: 100%;
+                height: 50vh;
+                background-color: #000000;
+                box-sizing: border-box;
+            }
+
+            .book_details_container {
+                display: flex;
+                /* justify-content: center; */
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(41, 40, 40, 0.466));
+
+            }
+
+            .book_details {
+                color: white;
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                margin-top: 50px;
+                margin: 20px;
+                height: 100%;
+                z-index: 999;
+                justify-content: center;
+
+            }
+
+            .sub_container {
+                margin-top: 20px;
+                height: 40vh;
+                overflow: scroll;
+                overflow-x: hidden;
+                box-sizing: border-box;
+            }
+
+            .thumbnail {
+                visibility: visible;
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                position: relative;
+            }
+
+            .thumbnail video {
+                width: 100%;
+                height: 75%;
+                object-fit: cover;
+                object-position: left center;
+                max-width: 100%;
+            }
+
+            .carousel {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                width: 100%;
+                position: relative;
+            }
+
+            .book_container {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                position: relative;
+                background-color: #000000;
+                transition: transform 0.5s ease;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .book_container div {
+                min-width: 0;
+                flex-shrink: 0;
+            }
+
+
+            .book_container img {
+                height: 250px;
+                width: 150px;
+            }
+
+        }
     </style>
     <div class="main_container">
         <div class="nav_container">
-
-            <div class="side_nav">
-                <ul>
-                    <!-- profile image circle -->
-                    <button type="button" class="btn">
-
-                        <img src="./img/profile.jpg" alt="" srcset=""
+            <div class="side_nav flex-column col-12 col-md-2 p-3">
+                <ul class="list-unstyled">
+                    <!-- Profile image circle -->
+                    <button type="button" class="btn mb-3">
+                        <img src="./img/profile.jpg" alt="Profile"
                             style="width: 100px; height: 100px; border-radius: 50%;">
                     </button>
 
-                    <button type="button" class="btn" onclick="window.location.href='index.html'">
-                        <i class="fa fa-house"></i> Home
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='index.html'">
+                        <i class="fa fa-house me-2"></i> Home
                     </button>
-                    <button type="button" class="btn" onclick="window.location.href='books.html'">
-                        <i class="fa fa-book"></i> Books
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='books.html'">
+                        <i class="fa fa-book me-2"></i> Books
                     </button>
-                    <button type="button" class="btn ">
-                        <i class="fa-solid fa-headphones"></i> Audio Book
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2">
+                        <i class="fa-solid fa-headphones me-2"></i> Audio Book
                     </button>
-                    <button type="button" class="btn ">
-                        <i class="fa-solid fa-circle-info"></i> About Us
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2">
+                        <i class="fa-solid fa-circle-info me-2"></i> About Us
                     </button>
-                    <button type="button" class="btn ">
-                        <i class="fa-solid fa-phone-volume"></i> Contact
+                    <button type="button" class="btn d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-phone-volume me-2"></i> Contact
                     </button>
-
-
                 </ul>
             </div>
+            <!-- Hamburger Icon for Mobile -->
+
+            <div class="hamburger" onclick="toggleNav()">
+                <span class="hamburger-icon">&#9776;</span> <!-- Hamburger icon -->
+                <span class="close-icon">X</span> <!-- "X" icon -->
+            </div> <!-- pang cp -->
+            <div class="mobile_nav">
+                <ul>
+                    <button type="button" class="btn mb-3">
+                        <img src="./img/profile.jpg" alt="Profile"
+                            style="width: 100px; height: 100px; border-radius: 50%;">
+                    </button>
+
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='index.html'">
+                         Home
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                        onclick="window.location.href='books.html'">
+                         Books
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2">
+                        Audio Book
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2">
+                         About Us
+                    </button>
+                    <button type="button" class="btn d-flex align-items-center justify-content-center">
+                         Contact
+                    </button>
+                </ul>
+            </div>
+
+
         </div>
 
 
-        <div class="cup">
+        <div class="cup ">
             <div class="video_container">
 
                 <div class="thumbnail">
@@ -526,7 +738,7 @@
 
 
                 </div>
-                
+
                 <div class="video_8">
                     <div class="book_details_container">
                         <div class="book_details">
@@ -818,6 +1030,7 @@
 
 
                 </div>
+            </div>
 </body>
 <script>
     const thumbnail = document.querySelector('.thumbnail');
@@ -1100,12 +1313,11 @@
     const carouselState = {};
 
     function moveCarousel(carouselId, direction) {
-        console.log(carouselId);
         const carouselElement = document.querySelector(`#${carouselId}`);
 
         const container = carouselElement.querySelector('.book_container');
         const itemsPerView = 1;
-        const itemWidth = 220;
+        const itemWidth = 120;
         const totalItems = container.querySelectorAll('div').length;
 
         if (!carouselState[carouselId]) carouselState[carouselId] = 0;
@@ -1136,6 +1348,17 @@
         var src = iframe.src;
         iframe.src = src.replace("mute=0", "mute=1");
     }
+    function toggleNav() {
+        var mobileNav = document.querySelector('.mobile_nav');
+        var sideNav = document.querySelector('.side_nav');
+        var hamburger = document.querySelector('.hamburger');
+
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+        hamburger.classList.toggle('open');
+
+    }
+
+
 </script>
 
 </html>
