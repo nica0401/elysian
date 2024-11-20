@@ -540,6 +540,7 @@
             }
 
         }
+        
     </style>
     <div class="main_container">
         <div class="nav_container">
@@ -1348,15 +1349,15 @@
         var src = iframe.src;
         iframe.src = src.replace("mute=0", "mute=1");
     }
-    function toggleNav() {
-        var mobileNav = document.querySelector('.mobile_nav');
-        var sideNav = document.querySelector('.side_nav');
-        var hamburger = document.querySelector('.hamburger');
+        function toggleNav() {
+            var mobileNav = document.querySelector('.mobile_nav');
+            var sideNav = document.querySelector('.side_nav');
+            var hamburger = document.querySelector('.hamburger');
 
-        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-        hamburger.classList.toggle('open');
+            mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+            hamburger.classList.toggle('open');
 
-    }
+        }
 
 
 </script>
