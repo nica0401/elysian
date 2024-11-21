@@ -17,10 +17,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-<<<<<<< HEAD
             background-color: #000000;
-=======
->>>>>>> 0602d9fa5b34e10724c94310a643bf2b9e919bdc
         }
 
         h1 {
@@ -178,12 +175,13 @@
         <div class="nav_container">
             <div class="side_nav flex-column col-12 col-md-2 p-3">
                 <ul class="list-unstyled">
-                    <button type="button" class="btn mb-3">
+                    <!-- Profile image circle -->
+                        <a href="/profile.html" class="btn mb-3">
                         <img src="./img/profile.jpg" alt="Profile"
                             style="width: 100px; height: 100px; border-radius: 50%;">
-                    </button>
+                        </a>
 
-                    <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
+                    <button  class="btn d-flex align-items-center justify-content-center mb-2"
                         onclick="window.location.href='index.html'">
                         <i class="fa fa-house me-2"></i> Home
                     </button>
@@ -192,20 +190,21 @@
                         <i class="fa fa-book me-2"></i> Books
                     </button>
                     <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
-                    onclick="window.location.href='audio-books.html'">
+                        onclick="window.location.href='audio-books.html'">
                         <i class="fa-solid fa-headphones me-2"></i> Audio Book
                     </button>
                     <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
-                    onclick="window.location.href='about-us.html'">
+                        onclick="window.location.href='about-us.html'">
                         <i class="fa-solid fa-circle-info me-2"></i> About Us
                     </button>
                     <button type="button" class="btn d-flex align-items-center justify-content-center"
-                    onclick="window.location.href='contact.html'">
+                        onclick="window.location.href='contact.html'">
                         <i class="fa-solid fa-phone-volume me-2"></i> Contact
                     </button>
                 </ul>
             </div>
 
+            <!-- Hamburger Icon for Mobile -->
             <div class="hamburger" onclick="toggleNav()">
                 <span class="hamburger-icon">&#9776;</span>
                 <span class="close-icon">X</span>
@@ -213,10 +212,10 @@
 
             <div class="mobile_nav">
                 <ul>
-                    <button type="button" class="btn mb-3">
+                    <a href="/profile.html" class="btn mb-3">
                         <img src="./img/profile.jpg" alt="Profile"
                             style="width: 100px; height: 100px; border-radius: 50%;">
-                    </button>
+                    </a>
 
                     <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
                         onclick="window.location.href='index.html'">
@@ -227,15 +226,15 @@
                         Books
                     </button>
                     <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
-                    onclick="window.location.href='audio-books.html'">
+                        onclick="window.location.href='audio-books.html'">
                         Audio Book
                     </button>
                     <button type="button" class="btn d-flex align-items-center justify-content-center mb-2"
-                    onclick="window.location.href='about-us.html'">
+                        onclick="window.location.href='about-us.html'">
                         About Us
                     </button>
                     <button type="button" class="btn d-flex align-items-center justify-content-center"
-                    onclick="window.location.href='contact.html'">
+                        onclick="window.location.href='contact.html'">
                         Contact
                     </button>
                 </ul>

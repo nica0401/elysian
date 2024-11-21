@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.8.162/pdf.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000000;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+
+        }
+
+        #pdf-viewer-container {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            height: 75vh;
+            justify-content: center;
+        }
+
+
+        canvas {
+            border: 1px solid #ccc;
+            width: 500px;
+        }
+
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div id="pdf-viewer-container">
+            <canvas id="pdf-viewer-left"></canvas>
+            <canvas id="pdf-viewer-right"></canvas>
+        </div>
+        <div class="buttons">
+            <button id="prev" disabled>Previous</button>
+            <button id="next">Next</button>
+        </div>
+
+    </div>
+
+    <script>
+        const url = '/pdf/TheLifeofJoseph.pdf';
+        const leftCanvas = document.getElementById('pdf-viewer-left');
+        const rightCanvas = document.getElementById('pdf-viewer-right');
+        const leftCtx = leftCanvas.getContext('2d');
+        const rightCtx = rightCanvas.getContext('2d');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentPage = 1;
+        let totalPages = 0;
+
+        async function renderPDF(leftPageNum, rightPageNum) {
+            const pdf = await pdfjsLib.getDocument(url).promise;
+            totalPages = pdf.numPages;
+
+            async function renderPage(pageNum, canvas, ctx) {
+                if (pageNum > pdf.numPages || pageNum < 1) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    return;
+                }
+                const page = await pdf.getPage(pageNum);
+                const viewport = page.getViewport({ scale: 1 });
+
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+
+                await page.render({
+                    canvasContext: ctx,
+                    viewport: viewport,
+                }).promise;
+            }
+
+            await renderPage(leftPageNum, leftCanvas, leftCtx);
+            await renderPage(rightPageNum, rightCanvas, rightCtx);
+
+            prevButton.disabled = leftPageNum <= 1;
+            nextButton.disabled = rightPageNum >= totalPages;
+        }
+
+        renderPDF(currentPage, currentPage + 1);
+
+        nextButton.addEventListener('click', () => {
+            currentPage += 2;
+            renderPDF(currentPage, currentPage + 1);
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentPage -= 2;
+            renderPDF(currentPage, currentPage + 1);
+        });
+    </script>
+</body>
+
+</html>
